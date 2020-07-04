@@ -1,0 +1,20 @@
+<div>
+    <div class="add-new-post">
+        <div *ngIf="showAddNewPostForm">
+            <app-add-post (passToParent)="addNewParrentPost($event)"></app-add-post>
+        </div>
+        <div>
+            <button *ngIf="!showAddNewPostForm" (click)="showAddNewPostForm=true" class="btn-new-post"> + Add New
+                Post</button>
+            <button *ngIf="showAddNewPostForm" (click)="showAddNewPostForm=false" class="btn-close"> x Close</button>
+        </div>
+    </div>
+    <div class="posts" *ngFor="let post of posts; index as i">
+        <div class="post">
+            <p class="post-title">Title : {{post.title}}</p>
+            <p>Body : {{post.body}}</p>
+            <span class="delete-post" (click)="deletePost(post)">🗑</span>
+        </div>
+        <div class="horizontal-line" *ngIf="i < posts.length-1"></div>
+    </div>
+</div>

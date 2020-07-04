@@ -1,0 +1,8 @@
+<div class="main">
+    <div class="cards">
+        <div *ngFor="let user of users">
+            <app-user [user]="user" [routerLink]="['/user-posts',user.id]"></app-user>
+            <!-- <app-user [user]="user" [routerLink]="['/user-posts',user.id]"></app-user> -->
+        </div>
+    </div>
+</div>

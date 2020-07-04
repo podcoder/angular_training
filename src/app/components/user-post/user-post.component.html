@@ -1,0 +1,9 @@
+<div>
+    <div class="posts" *ngFor="let post of userPosts; index as i">
+        <div class="post">
+            <p class="post-title">Title : {{post.title}}</p>
+            <p>Body : {{post.body}}</p>
+        </div>
+        <div class="horizontal-line" *ngIf="i < userPosts.length-1"></div>
+    </div>
+</div>
